@@ -4,7 +4,7 @@ int main (void)
 {
 	int readValue = 0;
 	printf("Enter an int: ");
-	scanf("%d", &radValue);
+	scanf("%d", &readValue);
 
 	printf("Value entered: %d\n", readValue);
 
