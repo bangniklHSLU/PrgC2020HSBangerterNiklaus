@@ -18,7 +18,6 @@ int main( int argc, char* argv[] ){
 			switch(entscheidVar){
 				case 0:
 					printf("0 as text is 'zero'\n");
-					entscheidVar = 0;
 					break;
 				case 1:
 					printf("1 as text is 'one'\n");
