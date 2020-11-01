@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int main( int argc, char* argv[] )
 {
@@ -15,6 +14,7 @@ int main( int argc, char* argv[] )
 		{
 			fread(&timeStamp, sizeof(long long), 1, pRead);
 			printf("timeStamp is: %lld\n", timeStamp);
+			
 			fread(&pressureVal, sizeof(int), 1, pRead);
 			printf("pressureVal is: %d\n", pressureVal);
 			

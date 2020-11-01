@@ -5,12 +5,13 @@
 // Datentyp definieren
 typedef enum
 {
-	SHOW_MENU =0,
+	show_menu =0,
 	start_numstat,
 	start_cubic,
 	start_factorial,
 	start_chose,
 	start_binary,
+	ARRAY_TEST,
 	exit_program
 } Selector;
 
@@ -21,12 +22,14 @@ long ComputeCubic(long x);
 long ComputeFactorial(long x);
 long ComputeChose(long x1, long x2);
 int ComputeBinary(void);
+void ArrayTest(void);
+void PrintIntArray( int array[], int arrayLength );
 
 // Programm
 int main( int argc, char* argv[] )
 {
 	int run 		= 1;
-	Selector selection 	= SHOW_MENU;
+	Selector selection 	= show_menu;
 	long ldinput1 		= 0;
 	long ldinput2		= 0;
 	float finput1 		= 0;
@@ -38,7 +41,7 @@ int main( int argc, char* argv[] )
 	{	
 		switch(selection)
 		{
-			case SHOW_MENU:
+			case show_menu:
 				selection = Show_mainmenu(); //Rückgabewert von show_mainmenu wird neuer Wert für selection.
 			break;
 			
@@ -63,7 +66,7 @@ int main( int argc, char* argv[] )
 				printf("Product: %.3f\n", arr[4]);
 				printf("Ratio: %.3f\n", arr[5]);
 				
-				selection = SHOW_MENU;
+				selection = show_menu;
 			break;
 			
 			case start_cubic:
@@ -73,7 +76,7 @@ int main( int argc, char* argv[] )
 							
 				printf("\n%ld cubed is %ld\n", ldinput1, ComputeCubic(ldinput1));
 			
-				selection = SHOW_MENU;
+				selection = show_menu;
 			break;
 			
 			case start_factorial:
@@ -83,7 +86,7 @@ int main( int argc, char* argv[] )
 				
 				printf("\nFactorial of %ld is %ld\n", ldinput1, ComputeFactorial(ldinput1));
 				 
-				selection = SHOW_MENU;
+				selection = show_menu;
 			break;
 			
 			case start_chose:
@@ -95,13 +98,19 @@ int main( int argc, char* argv[] )
 				
 				printf("\n%ld chose %ld is %ld\n", ldinput1, ldinput2, ComputeChose(ldinput1, ldinput2));
 				
-				selection = SHOW_MENU;
+				selection = show_menu;
 			break;
 			
 			case start_binary:
 				ComputeBinary();
 								
-				selection = SHOW_MENU;
+				selection = show_menu;
+			break;
+			
+			case ARRAY_TEST:
+				printf("\n# # # Executing ARRAY_TEST # # #\n");
+				ArrayTest();
+				selection = show_menu;
 			break;
 			
 			case exit_program:
@@ -111,7 +120,7 @@ int main( int argc, char* argv[] )
 			
 			default:
 				printf("\n!!!!!!!!! ERROR: Invalid selection !!!!!!!!!!\n");
-				selection = SHOW_MENU;
+				selection = show_menu;
 			break;
 		}
 	}
@@ -130,6 +139,7 @@ Selector Show_mainmenu(void)
 	printf("Enter %d to start FACTORIAL\n", 	start_factorial);
 	printf("Enter %d to start CHOSE\n",		start_chose);
 	printf("Enter %d to start BINARY\n",		start_binary);
+	printf("Enter %d to start ARRAY_TEST\n",	ARRAY_TEST);	
 	printf("Enter %d to exit program\n", 		exit_program);
 	printf(" 			   _\n");
 	printf("Enter your selection here: ");
@@ -243,7 +253,36 @@ int ComputeBinary(void)
 	printf("\n%d in binary form is :0b", input);
 	bin(input);
 	printf("\n");
-	
+
 	return 0;
 }
+
+void PrintIntArray( int array[], int arrayLength )
+{
+	for(int i = 0; i < arrayLength; i++)
+	{
+		printf("%d", array[i]);
+	}
+	printf("\n");
+}
+
+#define INTARRAYLENGTH 6
+void ArrayTest(void)
+{
+	int intArray[INTARRAYLENGTH] = {0};
+	PrintIntArray(intArray, INTARRAYLENGTH);
+	for(int i = 0; i < INTARRAYLENGTH; i++)
+	{
+		intArray[i] = i;
+	}
+	PrintIntArray(intArray, INTARRAYLENGTH);
+}
+
+
+
+
+
+
+
+
 
