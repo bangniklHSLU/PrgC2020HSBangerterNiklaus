@@ -19,10 +19,10 @@ systemState is: 13
 alarmState is: 0
 
 	Thu May 07 2020 00:00:41
-	13 in binär heisst: 1011
+	13 in binär heisst: 1101
 		Pump 2 = 1
-		Pump 1 = 0
-		Outlet Valve = 1
+		Pump 1 = 1
+		Outlet Valve = 0
 		Inlet Valve = 1
 		
 	Ab jetzt steigt der Druck an.
